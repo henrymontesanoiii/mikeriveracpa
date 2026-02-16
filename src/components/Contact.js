@@ -6,8 +6,7 @@ import FadeIn from 'react-fade-in';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import './Contact.css';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
+
 
 
 
@@ -81,22 +80,37 @@ import Col from 'react-bootstrap/Col';
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label for="from_email">Email address</Form.Label>
-        <Form.Control type="email" id = "email" name="from_email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Label>Email address</Form.Label>
+        <Form.Control 
+          type="email" 
+          id="email" 
+          name="from_email" 
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$" 
+          required
+          placeholder="example@domain.com"
+        />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicNumber">
-        <Form.Label for="from_number">Phone Number</Form.Label>
-        <Form.Control type="tel" id = "number" name="from_number" />
-        <Form.Text className="text-muted">
-          
-        </Form.Text>
+        <Form.Label>Phone Number</Form.Label>
+        <Form.Control 
+          type="tel" 
+          id="number" 
+          name="from_number" 
+          pattern="^\d{3}-\d{3}-\d{4}$" 
+          required
+          placeholder="123-456-7890"
+        />
+      </Form.Group>
+
+
+      <Form.Group className="mb-3" controlId="formBasicHear">
+        <Form.Label for="from_hear">How Did You Hear About Us?</Form.Label>
+        <Form.Control type="hear" id = "hear" name="from_hear" />
       </Form.Group>
 
       <textarea name="message" id = "message" rows={10}/>
+      
       <br></br>
       <center><Button type="submit" value="Send">
         Submit
